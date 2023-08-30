@@ -7,4 +7,11 @@ import manifest from './manifest';
 export default defineConfig({
   plugins: [react(), crx({ manifest })],
   server: { port: 5173, hmr: { port: 5173 } },
+  build: {
+    rollupOptions: {
+      input: {
+        popup: 'src/pages/popup/index.html',
+      },
+    },
+  },
 });

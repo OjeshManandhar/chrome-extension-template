@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ContentApp from './ContentApp';
+import App from './App';
 
 const root = document.createElement('div');
 root.id = 'crx-root';
@@ -14,6 +14,6 @@ shadowRoot.appendChild(rootIntoShadow);
 
 ReactDOM.createRoot(rootIntoShadow).render(
   <React.StrictMode>
-    <ContentApp />
+    <App />
   </React.StrictMode>,
 );
