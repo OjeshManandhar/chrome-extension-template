@@ -16,8 +16,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@assets/*": ["./src/assets/*"],
       "@popup/*": ["./src/pages/popup/*"],
       "@content/*": ["./src/pages/content/*"],
       "@background/*": ["./src/pages/background/*"]

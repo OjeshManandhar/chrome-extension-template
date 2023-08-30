@@ -11,8 +11,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      '@pages': '/src/pages',
-      '@assets': '/src/assets',
       '@popup': '/src/pages/popup',
       '@content': '/src/pages/content',
       '@background': '/src/pages/background',
