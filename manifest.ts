@@ -1,12 +1,12 @@
 // types
 import type { ManifestV3Export } from '@crxjs/vite-plugin';
 
-function getManifest({
+function makeManifest({
   env = 'dev',
   version = '0.0.1',
 }: {
+  env: string;
   version: string;
-  env: 'dev' | 'staging' | 'production';
 }): ManifestV3Export {
   let name = 'React Vite Example';
 
@@ -34,4 +34,4 @@ function getManifest({
   return manifest;
 }
 
-export default getManifest;
+export default makeManifest;

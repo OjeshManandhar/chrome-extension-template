@@ -5,7 +5,7 @@ import { loadEnv, defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import { crx } from '@crxjs/vite-plugin';
 
-import getManifest from './manifest';
+import makeManifest from './manifest';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -16,10 +16,7 @@ export default defineConfig(({ mode }) => {
       react(),
       eslint(),
       crx({
-        manifest: getManifest({
-          env: env.ENV as 'dev' | 'staging' | 'production',
-          version: env.VERSION,
-        }),
+        manifest: makeManifest({ env: env.ENV, version: env.VERSION }),
       }),
     ],
     resolve: {
