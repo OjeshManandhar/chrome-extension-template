@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import eslint from 'vite-plugin-eslint';
 import { crx } from '@crxjs/vite-plugin';
+import react from '@vitejs/plugin-react';
+
 import manifest from './manifest';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), crx({ manifest })],
+  plugins: [react(), eslint(), crx({ manifest })],
   build: {
     rollupOptions: {
       input: {
