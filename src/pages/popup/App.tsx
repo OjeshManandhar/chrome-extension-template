@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+// components
+import Test from '@popup/components/Test';
+
 // assets
 import viteLogo from '/vite.svg';
 import reactLogo from './../../assets/react.svg';
@@ -32,6 +35,9 @@ function App() {
       <p className='read-the-docs'>
         Click on the Vite and React logos to learn more
       </p>
+
+      <Test />
+      <Test />
     </>
   );
 }

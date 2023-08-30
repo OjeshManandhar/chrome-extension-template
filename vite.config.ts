@@ -8,6 +8,16 @@ import manifest from './manifest';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), eslint(), crx({ manifest })],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@pages': '/src/pages',
+      '@assets': '/src/assets',
+      '@popup': '/src/pages/popup',
+      '@content': '/src/pages/content',
+      '@background': '/src/pages/background',
+    },
+  },
   build: {
     rollupOptions: {
       input: {
