@@ -1,12 +1,13 @@
-import 'vite/client';
+/**
+ * Ignore the "Property 'env' does not exist on type 'ImportMeta'." error.
+ * This can be resolved by importing 'vite/client' here.
+ * But this is cause error in runtime so ignoring that error for now,
+ * until a fixed is found.,
+ */
 
 const envVariables = {
-  env: import.meta.env.ENV,
-  version: import.meta.env.VERSION,
-
   test: {
-    testKey: import.meta.env.TEST_KEY,
-    viteTestKey: import.meta.env.VITE_TEST_KEY,
+    key: import.meta.env.VITE_TEST_KEY,
   },
 } as const;
 

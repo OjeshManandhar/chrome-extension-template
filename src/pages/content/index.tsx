@@ -7,6 +7,11 @@ import App from './App';
 // utils
 import { attachTwindStyle } from '@/utils/attach-twind';
 
+// env
+import ENV from '@/env_config.ts';
+
+console.log('content:', ENV);
+
 const root = document.createElement('div');
 root.id = 'crx-root';
 document.body.appendChild(root);
