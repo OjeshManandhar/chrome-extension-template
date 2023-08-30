@@ -12,6 +12,10 @@ const manifest: ManifestV3Export = {
       matches: ['<all_urls>'],
     },
   ],
+  background: {
+    service_worker: 'src/background.ts',
+    type: 'module',
+  },
 };
 
 export default manifest;
