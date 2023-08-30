@@ -4,11 +4,10 @@ import ReactDOM from 'react-dom/client';
 // components
 import App from './App.tsx';
 
-// utils
-import { attachTwindStyle } from '@/utils/attach-twind.ts';
+// styles
+import './index.css';
 
 const root = document.getElementById('root')!;
-attachTwindStyle(root, document);
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>

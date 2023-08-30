@@ -1,5 +1,9 @@
 function App() {
-  return <h1 className='p-4 text-xl font-bold text-nokia'>Popup</h1>;
+  return (
+    <div className='h-96 w-96'>
+      <h1 className='text-xl font-bold text-nokia'>Popup</h1>
+    </div>
+  );
 }
 
 export default App;
