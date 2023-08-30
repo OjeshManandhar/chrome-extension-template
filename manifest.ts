@@ -2,8 +2,8 @@
 import type { ManifestV3Export } from '@crxjs/vite-plugin';
 
 function getManifest({
-  env,
-  version,
+  env = 'dev',
+  version = '0.0.1',
 }: {
   version: string;
   env: 'dev' | 'staging' | 'production';
