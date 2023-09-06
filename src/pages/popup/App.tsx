@@ -1,34 +1,52 @@
 import { useState } from 'react';
-import reactLogo from './../../assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Button, Drawer, Space, notification } from 'antd';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [api, contextHolder] = notification.useNotification();
 
+  const openNotification = () => {
+    api.open({
+      message: 'Notification Title',
+      description:
+        'I will never close automatically. This is a purposely very very long description that has many many characters and words.',
+      duration: 0,
+    });
+  };
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      {contextHolder}
+      <h1>Popup</h1>
+
+      <Space direction='vertical' size='middle'>
+        <Button type='primary' onClick={showDrawer}>
+          Open Drawer
+        </Button>
+
+        <Button type='primary' onClick={openNotification}>
+          Open the notification box
+        </Button>
+      </Space>
+
+      <Drawer
+        title='Basic Drawer'
+        placement='right'
+        onClose={onClose}
+        open={open}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+    </div>
   );
 }
 

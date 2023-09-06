@@ -13,6 +13,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@popup/*": ["./src/pages/popup/*"],
+      "@content/*": ["./src/pages/content/*"],
+      "@background/*": ["./src/pages/background/*"]
+    },
 
     /* Linting */
     "strict": true,
