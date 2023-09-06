@@ -1,11 +1,51 @@
-import { Button } from 'antd';
+import { useState } from 'react';
+import { Button, Drawer, Space, notification } from 'antd';
 
 function App() {
-  return (
-    <div className='h-96 w-96 p-4 border border-blue-500'>
-      <h1 className='text-xl font-bold text-nokia'>Popup</h1>
+  const [open, setOpen] = useState(false);
+  const [api, contextHolder] = notification.useNotification();
 
-      <Button type='primary'>Press Me!</Button>
+  const openNotification = () => {
+    api.open({
+      message: 'Notification Title',
+      description:
+        'I will never close automatically. This is a purposely very very long description that has many many characters and words.',
+      duration: 0,
+    });
+  };
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+  return (
+    <div>
+      {contextHolder}
+      <h1>Popup</h1>
+
+      <Space direction='vertical' size='middle'>
+        <Button type='primary' onClick={showDrawer}>
+          Open Drawer
+        </Button>
+
+        <Button type='primary' onClick={openNotification}>
+          Open the notification box
+        </Button>
+      </Space>
+
+      <Drawer
+        title='Basic Drawer'
+        placement='right'
+        onClose={onClose}
+        open={open}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     </div>
   );
 }
